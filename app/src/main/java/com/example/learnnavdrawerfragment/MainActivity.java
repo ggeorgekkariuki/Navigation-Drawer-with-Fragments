@@ -69,8 +69,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int itemId = menuItem.getItemId();
         switch (itemId){
             case(R.id.menu_home):
+                mFragmentManager = getSupportFragmentManager();
+                mFragmentTransaction = mFragmentManager.beginTransaction();
+                mFragmentTransaction.replace(R.id.container_for_fragments, new MainFragment());
+                mFragmentTransaction.commit();
                 break;
             case(R.id.menu_new):
+                mFragmentManager = getSupportFragmentManager();
+                mFragmentTransaction = mFragmentManager.beginTransaction();
+                mFragmentTransaction.replace(R.id.container_for_fragments, new SecondFragment());
+                mFragmentTransaction.commit();
                 break;
             case(R.id.menu_share):
                 break;
