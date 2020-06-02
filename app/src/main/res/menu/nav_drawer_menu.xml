@@ -15,12 +15,12 @@
         <menu>
             <item
                 android:id="@+id/menu_share"
-                android:icon="@drawable/ic_baseline_home_24"
-                android:title="Home"/>
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share"/>
             <item
                 android:id="@+id/menu_email"
                 android:icon="@drawable/ic_baseline_send_24"
-                android:title="Add New"/>
+                android:title="Send"/>
         </menu>
     </item>
 </menu>
