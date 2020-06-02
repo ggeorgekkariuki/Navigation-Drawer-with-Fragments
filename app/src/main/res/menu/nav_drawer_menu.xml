@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/menu_home"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="Home"/>
+            <item
+                android:id="@+id/menu_new"
+                android:icon="@drawable/ic_baseline_add_24"
+                android:title="Add New"/>
+        </menu>
+    </item><item android:title="Communication">
+        <menu>
+            <item
+                android:id="@+id/menu_share"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="Home"/>
+            <item
+                android:id="@+id/menu_email"
+                android:icon="@drawable/ic_baseline_send_24"
+                android:title="Add New"/>
+        </menu>
+    </item>
 </menu>
