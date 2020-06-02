@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Set the toolbar to have the same size as the default action bar size-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nav_drawer_toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="?actionBarSize"/>
+
+</LinearLayout>
