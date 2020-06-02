@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar = findViewById(R.id.nav_drawer_toolbar);
         setSupportActionBar(mToolbar);
 
 //        References to Navigation Drawer variables
         mDrawerLayout = findViewById(R.id.nav_drawer_main_activity);
-        mToolbar = findViewById(R.id.nav_drawer_toolbar);
         mNavigationView = findViewById(R.id.navigationView);
 
 //        Add the Navigation Drawer(DrawerLayout and ToolBar) to this Activity
