@@ -5,6 +5,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -19,6 +22,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar mToolbar;
     NavigationView mNavigationView;
 
+//    Variables for the Main Fragment
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        References to Navigation Drawer variables
         mDrawerLayout = findViewById(R.id.nav_drawer_main_activity);
         mNavigationView = findViewById(R.id.navigationView);
+        mNavigationView.setNavigationItemSelectedListener(this);
 
 //        Add the Navigation Drawer(DrawerLayout and ToolBar) to this Activity
         mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
@@ -41,6 +49,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 //        Sync the State of the navigation drawer - is it open or closed
         mActionBarDrawerToggle.syncState();
+
+//        A FragmentTransaction performs actions on the fragments e.g. replacing it
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+
+//        Add fragment to load from MainActivity
+        mFragmentTransaction.add(R.id.container_for_fragments, new MainFragment());
+
+//        Commit the transaction
+        mFragmentTransaction.commitNow();
 
 
     }
