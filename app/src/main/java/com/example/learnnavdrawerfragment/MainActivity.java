@@ -4,13 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -58,13 +61,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mFragmentTransaction.add(R.id.container_for_fragments, new MainFragment());
 
 //        Commit the transaction
-        mFragmentTransaction.commitNow();
+        mFragmentTransaction.commit();
 
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//        Close the Navigation after click
+        mDrawerLayout.closeDrawer(GravityCompat.START);
 //        This listens to the Menu Items that Appear on the Navigation Drawer
         int itemId = menuItem.getItemId();
         switch (itemId){
@@ -81,8 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mFragmentTransaction.commit();
                 break;
             case(R.id.menu_share):
-                break;
             case(R.id.menu_email):
+                Toast.makeText(this, "The "+menuItem.getTitle()+" button is under construction.",
+                        Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;
