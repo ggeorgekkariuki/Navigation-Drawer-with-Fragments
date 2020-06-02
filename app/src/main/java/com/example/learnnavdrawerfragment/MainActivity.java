@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener, MainFragment.onFragmentButtonSelected{
 
 //    Basic Variables for the Navigation Drawer
     DrawerLayout mDrawerLayout;
@@ -94,5 +95,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onButtonSelected() {
+        //When the Button in the Fragment is clicked, this interface will run in MainActivity Not MainFragment
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.container_for_fragments, new SecondFragment());
+        mFragmentTransaction.commit();
     }
 }
